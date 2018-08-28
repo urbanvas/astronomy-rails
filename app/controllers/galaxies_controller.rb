@@ -18,13 +18,20 @@ class GalaxiesController < ApplicationController
 
     def create
         @galaxy = Galaxy.new(galaxy_params)
-        @galaxy.save
-        redirect_to galaxies_path
+        if @galaxy.valid?
+            @galaxy.save
+            redirect_to galaxies_path
+        else
+            render :new
+        end
     end
 
     def update
-        @galaxy.update(galaxy_params)
-        redirect_to galaxy_path
+        if @galaxy.update(galaxy_params)
+            redirect_to galaxy_path
+        else
+            render :edit
+        end
     end
 
     def destroy

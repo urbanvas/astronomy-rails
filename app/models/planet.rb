@@ -5,5 +5,7 @@ class Planet < ApplicationRecord
     # ^^^new line added^^^ line 4
     # belongs_to :galaxy, through: :systems
     # has_one :galaxy, through: :systems
+    validates :name, presence: true
+    validates :user_id, presence: true
     
 end

@@ -17,13 +17,20 @@ class PlanetsController < ApplicationController
 
     def create
         @planet = Planet.new(planet_params)
-        @planet.save
-        redirect_to planets_path
+        if @planet.valid?
+            @planet.save
+            redirect_to planets_path
+        else
+            render :new
+        end
     end
 
     def update
-        @planet.update(planet_params)
-        redirect_to planet_path
+        if @planet.update(planet_params)
+            redirect_to planet_path
+        else
+            render :edit
+        end
     end
 
     def destroy

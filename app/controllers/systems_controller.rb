@@ -18,13 +18,20 @@ class SystemsController < ApplicationController
 
     def create
         @system = System.new(system_params)
-        @system.save
-        redirect_to systems_path
+        if @system.valid?
+            @system.save
+            redirect_to systems_path
+        else
+            render :new
+        end
     end
 
     def update
-        @system.update(system_params)
-        redirect_to system_path
+        if @system.update(system_params)
+            redirect_to system_path
+        else
+            render :edit
+        end
     end
 
     def destroy

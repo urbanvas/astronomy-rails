@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
-        @users = User.all
+        @users = User.search(params[:search])
     end
 
     def show
@@ -46,6 +46,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :password, :search)
     end
 end

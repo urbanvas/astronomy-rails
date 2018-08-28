@@ -2,7 +2,7 @@ class SystemsController < ApplicationController
     before_action :set_system, only: [:show, :edit, :update, :destroy]
 
     def index
-        @systems = System.all
+        @systems = System.search(params[:search])
     end
 
     def show
@@ -46,6 +46,6 @@ class SystemsController < ApplicationController
     end
 
     def system_params
-        params.require(:system).permit(:name, :star, :galaxy_id, :user_id)
+        params.require(:system).permit(:name, :star, :galaxy_id, :user_id, :search)
     end
 end

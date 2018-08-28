@@ -2,7 +2,7 @@ class PlanetsController < ApplicationController
     before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
     def index
-        @planets = Planet.all
+        @planets = Planet.search(params[:search])
     end
 
     def show
@@ -45,6 +45,6 @@ class PlanetsController < ApplicationController
     end
 
     def planet_params
-        params.require(:planet).permit(:name, :size, :life, :system_id, :galaxy_id, :user_id)
+        params.require(:planet).permit(:name, :size, :life, :system_id, :galaxy_id, :user_id, :search)
     end
 end

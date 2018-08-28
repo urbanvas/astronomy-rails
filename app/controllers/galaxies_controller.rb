@@ -1,8 +1,10 @@
 class GalaxiesController < ApplicationController
+    helper_method :params
     before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
 
     def index
-        @galaxies = Galaxy.all
+        @galaxies = Galaxy.search(params[:search])
+        # @galaxies = Galaxy.all
     end
 
     def show
@@ -46,6 +48,6 @@ class GalaxiesController < ApplicationController
     end
 
     def galaxy_params
-        params.require(:galaxy).permit(:name, :user_id)
+        params.require(:galaxy).permit(:name, :user_id, :search)
     end
 end

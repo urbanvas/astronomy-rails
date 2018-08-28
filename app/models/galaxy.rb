@@ -5,4 +5,17 @@ class Galaxy < ApplicationRecord
 
     validates :name, presence: true
     validates :user_id, presence: true
+
+    def self.search(search)
+        if search
+            user = User.find_by(username: search)
+            if user
+                self.where(user_id: user)
+            else
+                Galaxy.all
+            end
+        else
+            Galaxy.all
+        end
+    end
 end

@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h4>Search By User</h4>
+<%= form_for(systems_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag "Submit" %>
+<% end %>
+
 <h1>Systems</h1>
 
 <% @systems.each do |system| %>

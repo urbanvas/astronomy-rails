@@ -1,4 +1,4 @@
-class PlanetController < ApplicationController
+class PlanetsController < ApplicationController
     before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -28,6 +28,7 @@ class PlanetController < ApplicationController
 
     def destroy
         @planet.destroy
+        redirect_to planets_path
     end
 
     private

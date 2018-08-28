@@ -1,0 +1,46 @@
+<%= form_with(model: planet, local: true) do |f| %>
+    <% if planet.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(planet.errors.count, "error") %> stopped you just from saving to the DB</h2>
+            <ul>
+            <% planet.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+        <%=f.label :name %>
+        <%=f.text_field :name %>
+    </div>
+
+    <div class="field">
+        <%=f.label :size %>
+        <%=f.text_field :size %>
+    </div>
+
+    <div class="field">
+        <%=f.label :life %>
+        <%=f.check_box :life %>
+    </div>
+
+    <div class="field">
+        <%=f.label :system_id %>
+        <%=f.text_field :system_id %>
+    </div>
+
+    <div class="field">
+        <%=f.label :galaxy_id %>
+        <%=f.text_field :galaxy_id %>
+    </div>
+
+    <div class="field">
+        <%=f.label :user_id %>
+        <%=f.text_field :user_id %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planets</h1>
+
+<% @planets.each do |planet| %>
+    <%= planet.name %>
+    <%= planet.size %>
+    <%= planet.life %>
+    <%= planet.system_id %>
+    <%= planet.galaxy_id %>
+    <%= planet.user_id %>
+    <%= link_to "Show", planet %>
+    <%= link_to "Edit", edit_planet_path(planet) %>
+    <%= link_to "Destroy", planet, method: :delete, data: {confirm: "Sure?"} %>
+    <br>
+
+<% end %>
+
+<%= link_to "New Planet", new_planet_path %>

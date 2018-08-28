@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 neil = User.create(username: 'neil', email: 'neil@aol.com', password_digest: 'password')
-spiral = Galaxy.create(name: 'starwars', user_id: 1)
+spiral = Galaxy.create(name: 'Milky_Way', user_id: 1)
 og = System.create(name: 'solar', star: 'sun', galaxy_id: 1, user_id: 1)
-rocky = Planet.create(name: 'pluto', size: 100, life: true, system_id: 1, user_id: 1, galaxy_id: 1)
+rocky = Planet.create(name: 'earth', size: 100, life: true, system_id: 1, user_id: 1, galaxy_id: 1)

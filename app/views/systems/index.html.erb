@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Systems</h1>
+
+<% @systems.each do |system| %>
+    <%= system.name %>
+    <%= system.star %>
+    <%= system.galaxy_id %>
+    <%= system.user_id %>
+    <%= link_to "Show", system %>
+    <%= link_to "Edit", edit_system_path(system) %>
+    <%= link_to "Destroy", system, method: :delete, data: {confirm: "Sure?"} %>
+    <br>
+
+<% end %>
+
+<%= link_to "New System", new_system_path %>

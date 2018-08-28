@@ -2,7 +2,11 @@ class SystemsController < ApplicationController
     before_action :set_system, only: [:show, :edit, :update, :destroy]
 
     def index
-        @systems = System.search(params[:search])
+        if params[:user_id] && User.exists?(params[:user_id])
+            @systems = User.find(params[:user_id]).systems
+        else
+            @systems = System.search(params[:search])
+        end
     end
 
     def show

@@ -2,7 +2,11 @@ class PlanetsController < ApplicationController
     before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
     def index
-        @planets = Planet.search(params[:search])
+        if params[:user_id] && User.exists?(params[:user_id])
+            @planets = User.find(params[:user_id]).planets
+        else
+            @planets = Planet.search(params[:search])
+        end
     end
 
     def show

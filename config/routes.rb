@@ -4,4 +4,11 @@ Rails.application.routes.draw do
   resources :systems
   resources :planets
   resources :users
+
+  resources :users, only: [:show] do
+    resources :galaxies, only: [:show, :index]
+    resources :systems, only: [:show, :index]
+    resources :planets, only: [:show, :index]
+  end
+
 end

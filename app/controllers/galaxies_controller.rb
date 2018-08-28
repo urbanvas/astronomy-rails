@@ -3,8 +3,11 @@ class GalaxiesController < ApplicationController
     before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
 
     def index
-        @galaxies = Galaxy.search(params[:search])
-        # @galaxies = Galaxy.all
+        if params[:user_id] && User.exists?(params[:user_id])
+            @galaxies = User.find(params[:user_id]).galaxies
+        else
+            @galaxies = Galaxy.search(params[:search])
+        end
     end
 
     def show

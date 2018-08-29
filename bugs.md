@@ -10,3 +10,6 @@ nested routes
 
 
 build a homepage
+
+
+make scope instead of class search

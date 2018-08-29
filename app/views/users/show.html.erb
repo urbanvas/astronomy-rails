@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 <h2>Show Page</h2>
 
+<%= link_to "New Galaxy", new_user_galaxy_path(@user) %>
+<%= link_to "New System", new_user_system_path(@user) %>
+<%= link_to "New Planet", new_user_planet_path(@user) %>
+
 <p>Name: <%= @user.username %><p>
 <p>Email: <%= @user.email %><p>
 <p>Password: <%= @user.password %><p>

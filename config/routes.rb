@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :users
 
   resources :users, only: [:show] do
-    resources :galaxies, only: [:show, :index]
-    resources :systems, only: [:show, :index]
-    resources :planets, only: [:show, :index]
+    resources :galaxies, only: [:show, :index, :new]
+    resources :systems, only: [:show, :index, :new]
+    resources :planets, only: [:show, :index, :new]
   end
 
 end

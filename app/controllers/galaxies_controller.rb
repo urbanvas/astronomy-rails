@@ -11,11 +11,10 @@ class GalaxiesController < ApplicationController
     end
 
     def show
-        # binding.pry
     end
 
     def new
-        @galaxy = Galaxy.new
+        @galaxy = Galaxy.new(user_id: params[:user_id])
     end
 
     def edit
@@ -48,7 +47,6 @@ class GalaxiesController < ApplicationController
     private
 
     def set_galaxy
-        binding.pry
         @galaxy = Galaxy.find(params[:id])
     end
 

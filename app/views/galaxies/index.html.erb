@@ -11,7 +11,7 @@
 <% @galaxies.each do |galaxy| %>
     <%= galaxy.name %>
     <%= galaxy.user_id %>
-    <%= link_to "Show", galaxy %>
+    <%= link_to "Show", galaxy_path(galaxy) %>
     <%= link_to "Edit", edit_galaxy_path(galaxy) %>
     <%= link_to "Destroy", galaxy, method: :delete, data: {confirm: "Sure?"} %>
     <br>

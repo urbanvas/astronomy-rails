@@ -7,3 +7,6 @@ Have a message showing that search failed and is rendering .all instead
 fb login
 
 nested routes
+
+
+build a homepage

@@ -46,7 +46,7 @@ class SystemsController < ApplicationController
     private
 
     def set_system
-        @system = System.find_by(params[:id])
+        @system = System.find(params[:id])
     end
 
     def system_params

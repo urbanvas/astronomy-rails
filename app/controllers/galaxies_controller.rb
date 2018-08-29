@@ -2,6 +2,10 @@ class GalaxiesController < ApplicationController
     helper_method :params
     before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
 
+    def most_recent
+        @galaxy = Galaxy.most_recent
+    end
+
     def index
         if params[:user_id] && User.exists?(params[:user_id])
             @galaxies = User.find(params[:user_id]).galaxies

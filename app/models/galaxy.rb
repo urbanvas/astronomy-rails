@@ -6,6 +6,8 @@ class Galaxy < ApplicationRecord
     validates :name, presence: true
     validates :user_id, presence: true
 
+    scope :most_recent, -> {Galaxy.last}
+
     def self.search(search)
         if search
             user = User.find_by(username: search)

@@ -6,6 +6,8 @@ class System < ApplicationRecord
     validates :name, presence: true
     validates :user_id, presence: true
 
+    scope :most_recent, -> {System.last}
+
     def self.search(search)
         if search
             user = User.find_by(username: search)

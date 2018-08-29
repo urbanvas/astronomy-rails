@@ -1,6 +1,10 @@
 class SystemsController < ApplicationController
     before_action :set_system, only: [:show, :edit, :update, :destroy]
 
+    def most_recent
+        @system = System.most_recent
+    end
+
     def index
         if params[:user_id] && User.exists?(params[:user_id])
             @systems = User.find(params[:user_id]).systems

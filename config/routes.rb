@@ -11,4 +11,8 @@ Rails.application.routes.draw do
     resources :planets, only: [:show, :index, :new]
   end
 
+  get '/recent_galaxy', to: 'galaxies#most_recent'
+  get '/recent_system', to: 'systems#most_recent'
+  get '/recent_planet', to: 'planets#most_recent'
+
 end

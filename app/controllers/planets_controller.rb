@@ -1,6 +1,10 @@
 class PlanetsController < ApplicationController
     before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
+    def most_recent
+        @planet = Planet.most_recent
+    end
+
     def index
         if params[:user_id] && User.exists?(params[:user_id])
             @planets = User.find(params[:user_id]).planets

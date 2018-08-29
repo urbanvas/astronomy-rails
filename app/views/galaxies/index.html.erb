@@ -18,4 +18,8 @@
 
 <% end %>
 
+<% if params[:user_id] %>
+<%= link_to "New Galaxy", new_user_galaxy_path %>
+<% else %>
 <%= link_to "New Galaxy", new_galaxy_path %>
+<% end %>

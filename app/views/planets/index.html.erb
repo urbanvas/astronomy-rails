@@ -22,4 +22,8 @@
 
 <% end %>
 
+<% if params[:user_id] %>
+<%= link_to "New Planet", new_user_planet_path %>
+<% else %>
 <%= link_to "New Planet", new_planet_path %>
+<% end %>

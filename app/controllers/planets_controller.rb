@@ -1,4 +1,5 @@
 class PlanetsController < ApplicationController
+    before_action :require_login
     before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
     def most_recent
@@ -54,5 +55,9 @@ class PlanetsController < ApplicationController
 
     def planet_params
         params.require(:planet).permit(:name, :size, :life, :system_id, :galaxy_id, :user_id, :search)
+    end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
     end
 end

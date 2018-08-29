@@ -20,4 +20,8 @@
 
 <% end %>
 
+<% if params[:user_id] %>
+<%= link_to "New System", new_user_system_path %>
+<% else %>
 <%= link_to "New System", new_system_path %>
+<% end %>

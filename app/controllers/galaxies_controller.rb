@@ -1,4 +1,5 @@
 class GalaxiesController < ApplicationController
+    before_action :require_login
     helper_method :params
     before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
 
@@ -56,5 +57,9 @@ class GalaxiesController < ApplicationController
 
     def galaxy_params
         params.require(:galaxy).permit(:name, :user_id, :search)
+    end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
     end
 end

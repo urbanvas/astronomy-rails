@@ -1,4 +1,5 @@
 class SystemsController < ApplicationController
+    before_action :require_login
     before_action :set_system, only: [:show, :edit, :update, :destroy]
 
     def most_recent
@@ -55,5 +56,9 @@ class SystemsController < ApplicationController
 
     def system_params
         params.require(:system).permit(:name, :star, :galaxy_id, :user_id, :search)
+    end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
     end
 end

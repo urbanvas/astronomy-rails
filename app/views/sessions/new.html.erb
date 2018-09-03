@@ -1,6 +1,15 @@
-<form method='post'>
-  <input name='username'>
-  <input name='email'>
-  <input name='password'>
+<h1>Welcome to AstroRails</h1>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <h3>Login:</h3>
+  <label>Username:</label>
+  <input name="username"></input>
+  <br>
+  <label>Password:</label>
+  <input name="password"></input>
+
   <input type='submit' value='login'>
-</form>
+<% end %>
+<br>
+<%= link_to('Create User', '/users/new') %>
+<br>
+<%= link_to('Log in with Facebook!', '/auth/facebook') %>

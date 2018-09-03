@@ -2,9 +2,13 @@
 <h2>Show Page</h2>
 
 <%= link_to "New Galaxy", new_user_galaxy_path(@user) %>
+<br>
 <%= link_to "New System", new_user_system_path(@user) %>
+<br>
 <%= link_to "New Planet", new_user_planet_path(@user) %>
+<br>
 
 <p>Name: <%= @user.username %><p>
 <p>Email: <%= @user.email %><p>
-<p>Password: <%= @user.password %><p>
+<%= link_to 'Edit User', edit_user_path(@user) %>
+<%= link_to "Delete", @user, method: :delete, data: { confirm: "Really?" } %>

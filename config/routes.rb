@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :galaxies
   resources :systems
   resources :planets
-  resources :users
+  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
 
   resources :users, only: [:show] do
     resources :galaxies, only: [:show, :index, :new]
@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   get '/recent_system', to: 'systems#most_recent'
   get '/recent_planet', to: 'planets#most_recent'
 
+  root 'application#hello'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  post '/logout' => 'sessions#destroy'
+  get '/auth/facebook/callback' => 'sessions#create'
 end

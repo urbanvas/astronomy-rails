@@ -13,3 +13,6 @@ build a homepage
 
 
 make scope instead of class search
+
+
+session user_id for fb login is nil

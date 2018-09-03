@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 <h2>Show Page</h2>
 <p>Name: <%= @galaxy.name %></p>
-<p>User_Id: <%= @galaxy.user_id%></p>
+<p>User: <%= link_to @galaxy.user.username, @galaxy.user %><p>
 <br>
+
 <h3>Planets:</h3>
+<%= link_to "New Planet", new_user_planet_path(@galaxy.user) %>
+<br>
 <% @galaxy.planets.each do |planet| %>
     <%= link_to planet.name, planet_path %>
+    <br>
 <% end %>
+
 <h3>Systems:</h3>
+<%= link_to "New System", new_user_system_path(@galaxy.user) %>
+<br>
 <% @galaxy.systems.each do |system| %>
     <%= link_to system.name, system_path %>
+    <br>
 <% end %>

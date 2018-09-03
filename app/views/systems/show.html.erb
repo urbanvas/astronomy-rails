@@ -3,10 +3,12 @@
 
 <p>Name: <%= @system.name %><p>
 <p>Star: <%= @system.star %><p>
-<p>galaxy_id: <%= @system.galaxy_id %><p>
-<p>user_id: <%= @system.user_id %><p>
+<p>Galaxy: <%= link_to @system.galaxy.name, @system.galaxy %><p>
+<p>User: <%= link_to @system.user.username, @system.user %><p>
 
 <h3>Planets:</h3>
+<%= link_to "New Planet", new_user_planet_path(@system.user) %>
+<br>
 <% @system.planets.each do |planet| %>
     <%= link_to planet.name, planet_path %>
 <% end %>

@@ -5,3 +5,10 @@
 <p>Star: <%= @system.star %><p>
 <p>galaxy_id: <%= @system.galaxy_id %><p>
 <p>user_id: <%= @system.user_id %><p>
+
+<h3>Planets:</h3>
+<% @system.planets.each do |planet| %>
+    <%= link_to "planet.name", planet_path %>
+<% end %>
+<h3>Galaxy:</h3>
+    <%= link_to "@system.galaxy.name", galaxy_path %>

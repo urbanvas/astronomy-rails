@@ -2,6 +2,9 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def show
+        if session[:user_id] != @user.id
+            redirect_to controller: 'application', action: 'hello'
+        end
     end
 
     def new

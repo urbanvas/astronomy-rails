@@ -9,6 +9,6 @@
 <p>User: <%= link_to @planet.user.username, @planet.user %><p>
 
 <h3>System:</h3>
-    <%= link_to @planet.system.name, system_path %>
+    <%= link_to @planet.system.name, @planet.system %>
 <h3>Galaxy:</h3>
-    <%= link_to @planet.galaxy.name, galaxy_path %>
+    <%= link_to @planet.galaxy.name, @planet.galaxy %>

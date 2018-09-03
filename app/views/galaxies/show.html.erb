@@ -5,9 +5,9 @@
 <br>
 <h3>Planets:</h3>
 <% @galaxy.planets.each do |planet| %>
-    <%= link_to "planet.name", planet_path %>
+    <%= link_to planet.name, planet_path %>
 <% end %>
 <h3>Systems:</h3>
 <% @galaxy.systems.each do |system| %>
-    <%= link_to "system.name", system_path %>
+    <%= link_to system.name, system_path %>
 <% end %>

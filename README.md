@@ -13,11 +13,11 @@ This app makes use of the Ruby on Rails 5.2, which uses Ruby 2.3.
 To configure this app run:
 
 Install dependencies.
-‘bundle install’
+`bundle install`
 Migrate the database.
-‘rails db:migrate’
+`rails db:migrate`
 Start the secure server (running bundle exec to force the right dependency versions)
-‘bundle exec thin start —ssl’
+`bundle exec thin start —ssl`
 
 ## Process
 

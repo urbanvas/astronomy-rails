@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## AstroRails
 
-Things you may want to cover:
+Hello, Welcome to AstroRails, a web app with the intention of cataloguing all the astrological finds that we mere humans stumble upon in the universe. Add your new found discoveries of galaxies, systems and planets to our database with the hope of increasing the shared knowledge among us.
 
-* Ruby version
+## Tech
 
-* System dependencies
+This app makes use of the Ruby on Rails 5.2, which uses Ruby 2.3.
 
-* Configuration
+## Config
 
-* Database creation
+To configure this app run:
 
-* Database initialization
+Install dependencies.
+‘bundle install’
+Migrate the database.
+‘rails db:migrate’
+Start the secure server (running bundle exec to force the right dependency versions)
+‘bundle exec thin start —ssl’
 
-* How to run the test suite
+## Process
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can read more about my process here:
+[Blog](https://medium.com/@neilvseejoor/restful-routes-in-rails-8fc2b0d66dd6)

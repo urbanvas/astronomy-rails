@@ -14,8 +14,12 @@ To configure this app run:
 
 Install dependencies.
 `bundle install`
+
+
 Migrate the database.
 `rails db:migrate`
+
+
 Start the secure server (running bundle exec to force the right dependency versions)
 `bundle exec thin start —ssl`
 

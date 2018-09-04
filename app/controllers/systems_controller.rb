@@ -15,9 +15,6 @@ class SystemsController < ApplicationController
     end
 
     def show
-        if session[:user_id] != params[:user_id]
-            redirect_to redirect_to controller: 'sessions', action: 'new'
-        end
     end
 
     def new

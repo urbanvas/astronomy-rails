@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def show
         if session[:user_id] != @user.id
-            redirect_to controller: 'application', action: 'hello'
+            render 'sessions/new'
         end
     end
 
